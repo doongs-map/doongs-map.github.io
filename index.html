@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" integrity="sha512-poSrvjfoBHxVw5Q2awEsya5daC0p00C8SKN74aVJrs7XLeZAi+3+13ahRhHm8zdAFbI2+/SUIrKYLvGBJf9H3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/jquery.rwdImageMaps.js"></script>
 </head>
 <body>
     <div style="text-align: center; background-color: limegreen;">
         <img style="width: 20%;" src="https://www.urbanbrush.net/web/wp-content/uploads/edd/2022/11/urbanbrush-20221108214712319041.jpg" alt="서울시전체" title="서울시전체">
         <br><br><br>
-        <img src="https://cis.seoul.go.kr/ko/totalalimi_new/images/map/map_0.png" alt="서울시전체" title="서울시전체" id="map" usemap="#map">
+        <img style="width:100%;" src="https://cis.seoul.go.kr/ko/totalalimi_new/images/map/map_0.png" alt="서울시전체" title="서울시전체" id="map" usemap="#map">
     </div>
     <map name="map">
         <area href="#none" shape="poly" coords="322,280,339,267,353,271,368,281,376,287,384,302,391,320,412,327,434,339,446,354,453,368,441,376,419,376,410,352,387,357,371,356,353,348,351,331,339,325,332,300,326,294" onclick="fnMapLink(4);" alt="강남구">
@@ -44,6 +46,8 @@
             const map = document.getElementById('map');
             map.setAttribute("src", `https://cis.seoul.go.kr/ko/totalalimi_new/images/map/map_${index}.png`)
         }
+
+        $('img[usemap]').rwdImageMaps();
     </script>
 </body>
 </html>
